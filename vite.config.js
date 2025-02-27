@@ -23,19 +23,18 @@ import { resolve } from 'path'
 //   }
 // })
 export default defineConfig({
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/zhuangxiu-AI-Vue/'  // 仓库名称（若部署到子路径）
-    : '/',
-    plugins: [vue()],
+  publicPath: process.env.NODE_ENV === "production" ? "/zhuangxiu-AI-Vue/" : "/",
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
     }
   },
-  plugins: [vue()],
+  base: '/zhuangxiu-AI-Vue/',  // 生产环境路径
   build: {
-    outDir: 'dist',        // 必须与 gh-pages 的 -d 参数一致
-    emptyOutDir: true      // 构建前清空输出目录
+    outDir: 'dist',         // 构建输出目录
+    assetsDir: 'assets',    // 静态资源子目录
+    emptyOutDir: true       // 构建前清空目录（推荐
   }
 })
 // module.exports = {
