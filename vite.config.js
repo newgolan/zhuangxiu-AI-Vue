@@ -24,13 +24,13 @@ import { resolve } from 'path'
 // })
 export default defineConfig({
   publicPath: process.env.NODE_ENV === "production" ? "/zhuangxiu-AI-Vue/" : "/",
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
-  },
-  base: '/zhuangxiu-AI-Vue/',  // 生产环境路径
+  // plugins: [vue()],
+  // resolve: {
+  //   alias: {
+  //     '@': resolve(__dirname, 'src')
+  //   }
+  // },
+  // base: '/zhuangxiu-AI-Vue/',  // 生产环境路径
   build: {
     outDir: 'dist',         // 构建输出目录
     assetsDir: 'assets',    // 静态资源子目录
